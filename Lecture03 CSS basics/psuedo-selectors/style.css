@@ -1,0 +1,21 @@
+#hover_box{
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    font-size: 20pt;
+    color: wheat;
+}
+#hover_box:hover{
+    background-color: tomato;
+    color: teal;
+}
+#hover_box:active{
+    font-size: 30pt;
+}
+#l1 li:first-child{
+    font-size: 20pt;
+}
+#l2 li:nth-child(2n + 1){
+    font-size: 20pt;
+}

@@ -1,0 +1,20 @@
+div{
+    color: red;
+}
+div li{
+    font-size: 20px;
+}
+div > p{
+    color: blue;
+}
+/* only immediately following div of h1 : comment below */
+h1+div{
+    color: brown;
+}
+/* every following div of h1 : comment below */
+/* h1~div{
+    color: brown;
+} */
+h1, div{
+    background-color: aqua;
+}
