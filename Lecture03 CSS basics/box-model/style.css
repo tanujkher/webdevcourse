@@ -1,0 +1,19 @@
+.outer{
+    background-color: green;
+}
+.middle{
+    background-color: azure;
+}
+.inner{
+    background-color: aqua;
+}
+div.x{
+    margin: 10px;
+}
+div.y{
+    padding: 10px;
+}
+div.z{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
