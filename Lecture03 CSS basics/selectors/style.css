@@ -1,0 +1,11 @@
+.r{
+    text-align: right;
+    color: green;
+}
+div.r{
+    color: blue;
+}
+div{
+    font-family: sans-serif;
+    color: red;
+}
