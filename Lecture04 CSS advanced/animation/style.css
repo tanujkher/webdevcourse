@@ -1,0 +1,36 @@
+div{
+    margin: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: darkblue;
+    border: solid indigo 2px;
+    animation: colorchange 2s infinite;
+}
+#one{
+    animation-timing-function: ease-in;
+}
+#two{
+    animation-timing-function: ease-out;
+}
+#three{
+    animation-timing-function: ease-out;
+}
+#four{
+    animation-timing-function: ease-in-out;
+}
+@keyframes colorchange{
+    0%{
+        background-color: red;
+    }
+    33%{
+        background-color: blueviolet;
+        transform: rotate(45deg);
+    }
+    66%{
+        background-color: crimson;
+    }
+    100%{
+        background-color: indigo;
+        transform: rotate(90deg);
+    }
+}
