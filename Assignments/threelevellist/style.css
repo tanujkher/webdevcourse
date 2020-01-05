@@ -1,0 +1,35 @@
+#outerlist{
+    background-color: cornflowerblue;
+}
+#middlelist{
+    background-color: darkcyan;
+}
+#innerlist{
+    background-color: darkturquoise;
+}
+#I1{
+    text-decoration: underline;
+}
+#I2{
+    text-decoration: underline;
+}
+ul{
+    font-family: 'Lucida Sans';
+    width: 100px;
+}
+#I1 ~ ul{
+    height: 0;
+    display: none;
+}
+#I1:hover ~ ul{
+    height: 100%;
+    display: block;
+}
+#I2 ~ ul{
+    height: 0;
+    display: none;
+}
+#I2:hover ~ ul{
+    height: 100%;
+    display: block;
+}
