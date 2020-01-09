@@ -1,3 +1,93 @@
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serifs;
 }
+#fb{
+    transition: 1s;
+}
+#fb:hover{
+    filter: invert(100%);
+    transition: 1s;
+}
+#lk{
+    transition: 1s;
+}
+#lk:hover{
+    filter: invert(100%);
+    transition: 1s;
+}
+#mail{
+    transition: 1s;
+}
+#mail:hover{
+    filter: invert(100%);
+    transition: 1s;
+}
+.pp{
+    width: 190px;
+}
+#home{
+    margin-top: 140px;
+    margin-left: 200px;
+
+}
+.h{
+    height: 40px;
+    margin-left: 250px;
+    align-items: center;
+    transition: 1s;
+}
+.h:hover{
+    filter: invert(100%);
+    transition: 1s;
+}
+.c{
+    height: 40px;
+    margin-left: 250px;
+    align-items: center;
+    transition: 1s;
+}
+.c:hover{
+    filter: invert(100%);
+    transition: 1s;
+}
+.togglebar{
+    height: 50px;
+    background-color: #99d6ff;
+}
+#contact{
+    margin-top: 140px;
+    margin-left: 200px;
+}
+.extend{
+    margin-left: 47px;
+    margin-right: 48px;
+}
+.extend + ul{
+    display: none;
+}
+.extend:hover + ul{
+    display: block;
+}
+.extend1{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.extend1 + ul{
+    display: none;
+}
+.extend1:hover + ul{
+    display: block;
+}
+.extend2{
+    margin-left: 75px;
+    margin-right: 75px;
+}
+.extend2 + ul{
+    display: none;
+}
+.extend2:hover + ul{
+    display: block;
+}
+#rh{
+    height: 180px;
+}
