@@ -1,0 +1,25 @@
+body{
+    margin-left: 200px;
+}
+div{
+    height: 40px;
+    width: 40px;
+    background-color: magenta;
+    margin: 20px;
+    font-size: 15pt;
+    border: solid blue 2px;
+    transition: 2s, height 4s, width 1s;
+}
+#one:hover{
+    background-color: crimson;
+}
+#three:hover{
+    transform: scale(2);
+}
+#four:hover{
+    height: 50px;
+    width: 10px;
+}
+#seven:hover{
+    transform: translateY(20px);
+}
