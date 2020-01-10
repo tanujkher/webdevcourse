@@ -1,3 +1,46 @@
 body{
     background-color: #495C70;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: white;
+}
+.form{
+    border: 5px solid #53687E;
+}
+#entire input, textarea, select{
+    background: transparent;
+    border-bottom: solid 0.5px whitesmoke;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+#entire input[type=date], select{
+    color: white;
+    background: transparent;
+}
+#entire input[type=submit]{
+    background-color: rgb(132, 139, 146);
+    border-bottom: 0px;
+    transition: 1s;
+}
+#entire input[type=reset]{
+    background-color: rgb(132, 139, 146);
+    border-bottom: 0px;
+    transition: 1s;
+}
+#entire input[type=submit]:hover{
+    background-color: rgb(187, 194, 201);
+    border-bottom: 0px;
+    transition: 1s;
+}
+#entire input[type=reset]:hover{
+    background-color: rgb(187, 194, 201);
+    border-bottom: 0px;
+    transition: 1s;
+}
+#entire input:hover, textarea:hover, select:hover{
+    background-color: #f2f2f2c4;
+}
+#entire input:focus, textarea:focus, select:focus{
+    background-color: #f2f2f2c4;
+    box-shadow: 0px 0px 15px white;
 }
