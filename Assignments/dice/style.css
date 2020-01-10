@@ -12,7 +12,8 @@ body{
     animation-iteration-count: infinite;
     animation-duration: 12s;
     transform-style: preserve-3d;
-    transform-origin: 60px 60px 0;
+    /* transform-origin: 60px 60px 0; */
+    /* to keep dice at constant position */
 }
 .cube div{
     position: absolute;
