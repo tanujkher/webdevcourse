@@ -1,48 +1,66 @@
-#one{
-    height: 60px;
-    width: 60px;
-    background-color: violet;
-    border: solid blue 2px;
-    font-size: 20pt;
-    opacity: 80%;
+body{
+    background: burlywood;
 }
-#two{
-    height: 60px;
-    width: 60px;
-    background-color: violet;
-    border: solid blue 2px;
-    font-size: 20pt;
-    opacity: 80%;
+.wrap{
+    margin: auto;
+    width: 300px;
+    margin-top: 200px;
 }
-#three{
-    height: 60px;
-    width: 60px;
-    background-color: violet;
-    border: solid blue 2px;
-    font-size: 20pt;
-    opacity: 80%;
+.cube{
+    animation-name: cube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 60px 60px 0;
 }
-#four{
-    height: 60px;
-    width: 60px;
-    background-color: violet;
-    border: solid blue 2px;
-    font-size: 20pt;
-    opacity: 80%;
+.cube div{
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    background-color: indigo;
+    text-align: center;
+    font-size: 120px;
+    border: solid 3px blue;
+    color: cornsilk;
+    box-shadow: inset 0 0 20px gray;
+    line-height: 120px;
 }
-#five{
-    height: 60px;
-    width: 60px;
-    background-color: violet;
-    border: solid blue 2px;
-    font-size: 20pt;
-    opacity: 80%;
+.face1{
+    transform: translateZ(60px);
 }
-#six{
-    height: 60px;
-    width: 60px;
-    background-color: violet;
-    border: solid blue 2px;
-    font-size: 20pt;
-    opacity: 80%;
+.face2{
+    transform: rotateY(90deg) translateZ(60px);
+}
+.face3{
+    transform: rotateY(-180deg) translateZ(60px);
+}
+.face4{
+    transform: rotateY(-90deg) translateZ(60px);
+}
+.face5{
+    transform: rotateX(90deg) translateZ(60px);
+}
+.face6{
+    transform: rotateX(-90deg) translateZ(60px);
+}
+@keyframes cube{
+    0%{
+        transform: rotateY(0deg);
+    }
+    16%{
+        transform: rotateY(-180deg);
+    }
+    33%{
+        transform: rotateY(-270deg);
+    }
+    50%{
+        transform: rotateY(-270deg);
+    }
+    66%{
+        transform: rotateX(-90deg);
+    }
+    83%{
+        transform: rotateX(-270deg);
+    }
 }
