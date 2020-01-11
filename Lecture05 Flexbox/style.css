@@ -1,0 +1,21 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.box1, .box2, .box3, .box4, .box5, .box6{
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+    background-color: blueviolet;
+}
+.box1{
+    /* order: 2; */
+    flex-grow: 1;
+}
+.box2{
+    /* order: 0; */
+    flex-grow: 1;
+}
