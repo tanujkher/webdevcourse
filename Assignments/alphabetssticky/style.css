@@ -1,0 +1,26 @@
+.outer{
+    display: flex;
+    flex-wrap: wrap;
+    height: 700px;
+    width: 800px;
+    background-color: burlywood;
+    border: solid 2px chocolate;
+    margin: 40px;
+    justify-content: flex-end;
+}
+.obj{
+    position: sticky;
+    top: 10px;
+    height: 100px;
+    width: 100px;
+    background-color: cornflowerblue;
+    border: solid 2px darkblue;
+    font-size: 60pt;
+    text-align: center;
+}
+.word{
+    font-size: 60pt;
+    height: 100px;
+    width: 680px;
+    border: solid 2px wheat;
+}
