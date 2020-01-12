@@ -25,3 +25,22 @@
     transform: rotateY(180deg);
     transition: 2s;
 }
+.ftext{
+    position: absolute;
+    opacity: 100%;
+    transition: 2s;
+}
+.btext{
+    position: absolute;
+    opacity: 0%;
+    transition: 2s;
+}
+.card:hover .ftext{
+    opacity: 0%;
+    transition: 2s;
+}
+.card:hover .btext{
+    opacity: 100%;
+    transition: 2s;
+    transform: rotateY(180deg);
+}
