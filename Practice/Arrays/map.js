@@ -7,3 +7,5 @@ let c = arr.map(function(item){
     return 100 - item
 })
 console.log(c)
+let d = arr.map(Math.sqrt)
+console.log(d)
