@@ -9,15 +9,30 @@ window.onload = function(){
             let li = document.createElement('li')
             li.innerText += task
             let btnup = document.createElement('button')
-            btnup.innerText = "+"
+            btnup.innerText = '+'
             let btndown = document.createElement('button')
-            btndown.innerText = "-"
+            btndown.innerText = '-'
             let btnstrike = document.createElement('button')
-            btnstrike.innerText = "x"
+            btnstrike.innerText = 'x'
             li.appendChild(btnup)
             li.appendChild(btndown)
             li.appendChild(btnstrike)
             list.appendChild(li)
+            document.getElementById('text').value = ''
+            btnstrike.onclick = function(){
+                var li = this.parentElement
+                li.className = 'done'
+            }
+        }
+    }
+
+    let clearBtn = document.getElementById('clearBtn')
+    clearBtn.onclick = function(){
+        let plist = document.getElementsByTagName('li')
+        for (let i = 0; i < plist.length; i++) {
+            if(plist[i].className === 'done'){
+                plist[i].className = 'remove'
+            }
         }
     }
 

@@ -1,0 +1,6 @@
+#list li.done{
+    text-decoration: line-through;
+}
+#list li.remove{
+    display: none;
+}
