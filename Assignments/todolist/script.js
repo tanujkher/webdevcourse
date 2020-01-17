@@ -31,7 +31,12 @@ window.onload = function(){
         let plist = document.getElementsByTagName('li')
         for (let i = 0; i < plist.length; i++) {
             if(plist[i].className === 'done'){
-                plist[i].className = 'remove'
+                plist[i].className ='remove'
+            }
+        }
+        for (let i = 0; i < plist.length; i++) {
+            if(plist[i].className === 'done' || plist[i].className === 'remove'){
+                list.removeChild(plist[i])
             }
         }
     }
