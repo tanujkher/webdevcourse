@@ -3,6 +3,8 @@ window.onload = function(){
     let list = document.getElementById('list')
     let btn = document.getElementById('btn')
 
+    // list.innerHTML = localStorage.getItem('a')
+    
     function addTask(){
         let task = text.value
         if(task != ''){
@@ -20,6 +22,7 @@ window.onload = function(){
             li.className = 'list-item'
             list.appendChild(li)
             document.getElementById('text').value = ''
+            // localStorage.setItem('a', list.innerHTML)
             btnstrike.onclick = function(){
                 var li = this.parentElement
                 li.className = 'done'
