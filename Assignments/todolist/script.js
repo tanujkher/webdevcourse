@@ -29,16 +29,18 @@ window.onload = function(){
     let clearBtn = document.getElementById('clearBtn')
     clearBtn.onclick = function(){
         let plist = document.getElementsByTagName('li')
+        let arr = []
+        let j = 0
         for (let i = 0; i < plist.length; i++) {
             if(plist[i].className === 'done'){
-                plist[i].className ='remove'
+                arr[j] = i
+                j++
             }
         }
-        for (let i = 0; i < plist.length; i++) {
-            if(plist[i].className === 'done' || plist[i].className === 'remove'){
-                list.removeChild(plist[i])
-            }
+        for(let i = arr.length - 1; i >= 0; i--){
+            list.removeChild(plist[arr[i]])
         }
+        console.log(arr)
     }
 
     btn.onclick = function(){
