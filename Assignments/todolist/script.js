@@ -17,11 +17,50 @@ window.onload = function(){
             li.appendChild(btnup)
             li.appendChild(btndown)
             li.appendChild(btnstrike)
+            li.className = 'list-item'
             list.appendChild(li)
             document.getElementById('text').value = ''
             btnstrike.onclick = function(){
                 var li = this.parentElement
                 li.className = 'done'
+            }
+            btnup.onclick = function(){
+                var li = this.parentElement
+                li.className = 'move up'
+                var s1 = 0
+                let plist = document.getElementsByTagName('li')
+                for (let i = 0; i < plist.length; i++) {
+                    if(plist[i].className === 'move up'){
+                        s1 = i
+                        break
+                    }
+                }
+                if(s1 === 0){
+                    plist[0].className = 'list-item'
+                }else{
+                    list.insertBefore(plist[s1], plist[s1 - 1])
+                    plist[s1].className = 'list-item'
+                    plist[s1 - 1].className = 'list-item'
+                }
+            }
+            btndown.onclick = function(){
+                var li = this.parentElement
+                li.className = 'move down'
+                var s1 = 0
+                let plist = document.getElementsByTagName('li')
+                for (let i = 0; i < plist.length; i++) {
+                    if(plist[i].className === 'move down'){
+                        s1 = i
+                        break
+                    }
+                }
+                if(s1 === plist.length - 1){
+                    plist[s1].className = 'list-item'
+                }else{
+                    list.insertBefore(plist[s1 + 1], plist[s1])
+                    plist[s1].className = 'list-item'
+                    plist[s1 + 1].className = 'list-item'
+                }
             }
         }
     }
