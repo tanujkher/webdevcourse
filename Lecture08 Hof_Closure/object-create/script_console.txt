@@ -1,0 +1,25 @@
+a
+{x: 10, y: "abc", z: Array(3)}
+a.x
+10
+c.x
+10
+c.x = c.x + 1
+11
+c
+{g: true, h: Array(3), i: "lmn", x: 11}
+c.x
+11
+a.x
+10
+a
+{x: 10, y: "abc", z: Array(3)}
+c.z[3] = 4
+4
+c
+{g: true, h: Array(3), i: "lmn", x: 11}
+a
+{x: 10, y: "abc", z: Array(4)}
+a.z
+(4) [1, 2, 3, 4]
+changing an item in a using c will lead to addition of that item to c and no change in a but if its an array then the item will be changed in a only and not added to c
