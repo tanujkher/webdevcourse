@@ -28,3 +28,16 @@ console.log(mainStr.substr(3, 5) + 'same as one line above')
 console.log(mainStr.slice(-18, -13))//from small to large
 // console.log(mainstr.substring(-4, -9)) not possible
 console.log(mainStr.substr(-18, 5))//number of char value is always positive ie 5 in this context
+
+//find the number of occurences of ab in the given string
+let ss = 'ab ac ab de ab a ab ab b abc'//6
+let search = 'ab'
+let count = 0
+while(ss.indexOf(search) >= 0 && ss.length != 0){
+    let i = ss.indexOf(search)
+    ss = ss.substring(i + search.length)
+    console.log(ss)
+    count++
+}
+//Ctrl + Alt + M to terminate infinite loop
+console.log('count is ' + count)
