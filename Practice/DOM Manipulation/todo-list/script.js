@@ -11,6 +11,9 @@ window.onload = function(){
             let item = document.createElement('li')
             let span = document.createElement('span')
             span.innerText = tasklist[i]
+
+            //Delete Button
+
             let Xbtn = document.createElement('button')
             Xbtn.onclick = function(event){
                 event.target.parentElement.remove()
@@ -25,6 +28,9 @@ window.onload = function(){
             }
             Xbtn.innerText = 'X'
             item.appendChild(Xbtn)
+
+            //Up Button
+
             let upbtn = document.createElement('button')
             upbtn.innerText = '^'
             upbtn.onclick = function(event){
@@ -54,6 +60,18 @@ window.onload = function(){
                 localStorage.tasks = tasklist.join(',')
             }
             item.appendChild(upbtn)
+
+            //Down Button
+
+            let downbtn = document.createElement('button')
+            downbtn.innerText = 'V'
+            downbtn.onclick = function(event){
+                event.target.parentElement.parentElement.insertBefore(
+                    event.target.parentElement.nextElementSibling,
+                    event.target.parentElement
+                )
+            }
+            item.appendChild(downbtn)
             item.appendChild(span)
             list.appendChild(item)
         }
