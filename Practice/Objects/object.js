@@ -13,3 +13,17 @@ let obj = {
 }
 console.log(obj.c())
 console.log(obj.d)
+
+//new keyword
+
+function fun(){
+    this.p = 'something'
+    return 10
+}
+
+let wn = fun()
+let n = new fun()
+console.log(wn)
+console.log(n)
+console.log(wn.p)
+console.log(n.p)
