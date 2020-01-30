@@ -1,24 +1,32 @@
-setTimeout(function(){
-    let filePath = 'C\\Windows\\xyz.txt'
-    console.log('File downloaded to path : ' + filePath)
-    downloaded(filePath)
-}, 3000)
-
-function downloaded(path){
-    console.log('Action to perform on : ' + path + 'Resize \n')
-    resize(path, function(path){
-        console.log('File resized at : ' + path)
-    })
-}
-console.log('Downloading file \n')
-
-function resize(fileName, location){
+function downloadFile(url, downloaded){
+    console.log('Downloading file from ' + url)
     setTimeout(function(){
-        console.log('Resizing file ...\n')
-        let filePath = fileName.split('.')[0] + '-resized.' + fileName.split('.')[1] 
-        setTimeout(function(){
-            console.log('New path is : ' + filePath)
-        }, 1000)
-        location(filePath)
-    }, 2000)
+        let filePath = 'C:\\Downloads\\' + url.split('/').pop()
+        console.log('Downloaded file path ' + filePath)
+        downloaded(filePath)
+    }, 3000)
 }
+
+function resizeFile(path, resized){
+    console.log('We are resizing file ' + path)
+    setTimeout(function(){
+        let newPath = path.split('.')[0] + '-resized.' + path.split('.')[1]
+        resized(newPath)
+    }, 3000)
+}
+
+function uploadFile(diskPath, uploaded){
+    setTimeout(function(){
+        let uploadedPath = 'https://cb.lk/uploads/' + diskPath.split('\\').pop()
+        console.log('We uploaded to ' + uploadedPath)
+        uploaded(uploadedPath)
+    }, 3000)
+}
+
+downloadFile('http://google.com/logo.png', function(downloadedPath){
+    resizeFile(downloadedPath, function(resizedPath){
+        uploadFile(resizedPath, function(uploadedPath){
+            console.log('uploaded at ' + uploadedPath)
+        })
+    })
+})
