@@ -18,7 +18,7 @@ window.onload = function(){
             Xbtn.onclick = function(event){
                 event.target.parentElement.remove()
                 let del = event.target.parentElement.innerText
-                del = del.substring(2)
+                del = del.substring(3)
                 for(let i = 0; i < tasklist.length; i++){
                     if(tasklist[i] == del){
                         tasklist.splice(i, 1)
@@ -39,7 +39,7 @@ window.onload = function(){
                     event.target.parentElement.previousElementSibling
                     )
                 let up = event.target.parentElement.innerText
-                up = up.substring(2)
+                up = up.substring(3)
                 let s1 = 0;
                 for(let i = 0; i < tasklist.length; i++){
                     if(tasklist[i] == up){
@@ -70,6 +70,18 @@ window.onload = function(){
                     event.target.parentElement.nextElementSibling,
                     event.target.parentElement
                 )
+                let down = event.target.parentElement.innerText
+                down = down.substring(3)
+                let s1 = 0
+                for(let i = 0; i < tasklist.length; i++){
+                    if(tasklist[i] == down){
+                        s1 = i
+                    }
+                }
+                let temp = tasklist[s1]
+                tasklist[s1] = tasklist[s1 + 1]
+                tasklist[s1 + 1] = temp
+                localStorage.tasks = tasklist.join(',')
             }
             item.appendChild(downbtn)
             item.appendChild(span)
