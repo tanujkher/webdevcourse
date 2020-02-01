@@ -9,7 +9,7 @@ request({
         console.error(err)
         return
     }
-    fs.writeFile('googlecontent.png', body, (err) => {
+    fs.writeFile('googlelogo.png', body, (err) => {
         if(err){
             console.error(err)
             return
