@@ -1,0 +1,15 @@
+monkey
+cat
+monkey
+dog
+monkey
+cat
+lion
+lion
+lion
+rat
+monkey
+lion
+dog
+monkey
+lion
