@@ -29,16 +29,36 @@ function Resize(fileName){
 function Upload(resizedFile){
     return new Promise((resolve, reject) => {
         console.log('Uploading ' + resizedFile)
-        resolve('http://www.imgur.com/' + resizedFile)
+        setTimeout(() => {
+            resolve('http://www.imgur.com/' + resizedFile)
+        }, 3000)
     })
 }
 
-Download('http://www.google.com/logo.png')
-    .then(Resize)
-    .then(Upload)
-    .then((resizedFile) => {
-        console.log('Uploaded to ' + resizedFile)
-    })
-    .catch((err) => {
-        console.error(err)
-    })
+// Download('http://www.google.com/logo.png')
+//     .then(Resize)
+//     .then(Upload)
+//     .then((resizedFile) => {
+//         console.log('Uploaded to ' + resizedFile)
+//     })
+//     .catch((err) => {
+//         console.error(err)
+//     })
+
+Promise.all([Download('http://www.google.com/logo.png'), 
+             Download('http://www.google.com/image.png'),
+             Download('http://www.google.com/banner.png')])
+             .then((values) => {
+                 return Promise.all(values.map(Resize))
+             })
+             .then((uploadValues) => {
+                 return Promise.all(uploadValues.map(Upload))
+             })
+             .then((uploadLink) => {
+                 for(let val of uploadLink){
+                     console.log('Uploaded to ' + val)
+                 }
+             })
+             .catch((err) => {
+                 console.error(err)
+             })
