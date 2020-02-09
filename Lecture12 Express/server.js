@@ -1,6 +1,17 @@
 const express = require('express')
 const srv = express()
 
+const request = require('request')
+srv.get('/example', (req, res) => {
+    request('http://example.com', (err, resp, body) => {
+        res.send(body)
+    })
+})
+
+srv.get('/google', (res, req) => {
+    res.redirect('https://www.google.com')
+})
+
 srv.get('/', (req, res) => {
     res.send(`
     <html>
