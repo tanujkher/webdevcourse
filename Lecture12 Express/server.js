@@ -8,7 +8,7 @@ srv.get('/example', (req, res) => {
     })
 })
 
-srv.get('/google', (res, req) => {
+srv.get('/google', (req, res) => {
     res.redirect('https://www.google.com')
 })
 
