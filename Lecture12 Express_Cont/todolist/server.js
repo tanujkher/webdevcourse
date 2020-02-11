@@ -1,62 +1,64 @@
 const express = require('express')
 const srv = express()
 
-const fs = require('fs')
+const fs = require('fs').promises
+const os = require('os')
 
 let todos = []
 
-app.get('/', (req, res) => {
+srv.get('/', (req, res) => {
+  async function filecopy(){
+    let data = await fs.readFile(__dirname + '/content.txt')
+    todos = data.split(os.EOL)
+    console.log(todos)
+  }
+  filecopy()
+  let list = ''
+  for(let i = 0; i <= todos.length - 1; i++){
+    list = list + '<li>' + todos[i] + `<a href="/delete?id=${i}">X</a>` + '</li>'
+  }
 
-    let items = ''
-    for (let i = 0; i < todos.length; i++) {
-      items += `<li> ${todos[i]} <a href="/${i}/delete">❌</a> </li> \n`
-    }
-  
-  
-    res.send(`
-    <form action="/add">
-      <input name="task">
-      <input type="submit">
-    </form>
-    <br>
-    <ol start="0">
-      ${items}
-    </ol>
-    `)
+  res.send(`
+  <html>
+    <body>
+      <form action='/add'>
+        <input name="task"></input>
+        <input type="submit"></input>
+      </form>
+      <ol>
+        ${list}
+      </ol>
+    </body>
+  </html>
+  `)
+})
+
+async function addremdata(){
+  let promise = fs.writeFile(__dirname + '/content.txt', todos.join(os.EOL))
+  await promise.then(() => {
+    console.log('Added')
   })
-  
-  app.get('/add', (req, res) => {
-    if (req.query.task) {
-      todos.push(req.query.task)
-      res.redirect('/')
-    } else {
-      res.send('Error: No task defined')
-    }
-    fs.writeFile(__dirname + '/content.txt', (err, data) => {
-        
-    })
-  })
-  
-  app.get('/:id', (req, res) => {
-    if (isNaN(parseInt(req.params.id))) {
-      res.send('Error: id not numerical')
-    } else {
-      res.send(todos[req.params.id])
-    }
-  })
-  
-  app.get('/:id/delete', (req, res) => {
-    if (isNaN(parseInt(req.params.id))) {
-      res.send('Error: id not numerical')
-    } else {
-      if (todos[req.params.id]) {
-        todos.splice(req.params.id, 1)
-        res.redirect('/')
-      } else {
-        res.send('Error: No task on this index')
-      }
-    }
-  })
+}
+
+srv.get('/add', (req, res) => {
+  if(req.query.task){
+    todos.push(req.query.task)
+    addremdata()
+    res.redirect('/')
+  }else{
+    res.send('Enter a task')
+  }
+})
+
+srv.get('/delete', (req, res) => {
+  if(req.query.id >= 0 && req.query.id <= todos.length - 1){
+    todos.splice(req.query.id, 1)
+    addremdata()
+    res.redirect('/')
+  }else{
+    res.send('Index not available')
+  }
+})
 
 srv.listen(5939, () => {
     console.log('Server started') 
