@@ -1,2 +1,3 @@
-def
-ghi
+Learn Operating System
+Study Aptitude
+Learn Web Development
