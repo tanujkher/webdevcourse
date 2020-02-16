@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
+    <script src="/public/jquery-3.4.1.js"></script>
+    <script src="/public/todos.js"></script>
 </head>
 <body>
     <form action="/add" method="POST">
-        <input name="completed" type="checkbox">
-        <input name="Task">
-        <button type="submit">ADD</button>
+        <input id="completed" name="completed" type="checkbox">
+        <input id="Task" name="Task">
+        <button id="submit" type="submit">ADD</button>
     </form>
 
-    <ul>
+    <ul id="list">
         {{#each todos as |todo|}}
         <li>
             {{#if todo.status}}
