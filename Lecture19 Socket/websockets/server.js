@@ -2,6 +2,8 @@ const express = require('express')
 const http = require('http')
 const socketio = require('socket.io')
 
+const PORT = process.env.PORT || 2938
+
 const app = express()
 const srv = http.createServer(app)
 const io = socketio(srv)
@@ -13,8 +15,12 @@ io.on('connection', (socket) => {
     socket.on('beep', () => {
         console.log('beep button clicked from ' + socket.id)
     })
+
+    socket.on('msg_send', (data) => {
+        io.emit('msg_rcvd', data)
+    })
 })
 
-srv.listen(2938, () => {
-    console.log('Server started at http://localhost:2938')
+srv.listen(PORT, () => {
+    console.log(`Server started at http://localhost:${PORT}`)
 })
