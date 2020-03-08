@@ -10,6 +10,9 @@ app.use('/', express.static(__dirname + '/public'))
 
 io.on('connection', (socket) => {
     console.log('connection created at ' + socket.id)
+    socket.on('beep', () => {
+        console.log('beep button clicked from ' + socket.id)
+    })
 })
 
 srv.listen(2938, () => {
