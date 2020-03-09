@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-    <form method="POST" action="/pages/add">
+    <form>
         <table>
             <tr>
                 <th>Name</th>
@@ -15,14 +17,22 @@
                 <th>City</th>
             </tr>
             <tr>
-                <td><input name="name"></td>
-                <td><input name="age" type="number"></td>
-                <td><input name="city"></td>
+                <td><input id="name" name="name"></td>
+                <td><input id="age" name="age" type="number"></td>
+                <td><input id="city" name="city"></td>
             </tr>
             <tr>
-                <td rowspan=3><input type="submit"></td>
+                <td rowspan=3><button id="btnSubmit">SUBMIT</button></td>
             </tr>
         </table>
     </form>
+    <br>
+    <table id="persons">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+    </table>
 </body>
 </html>

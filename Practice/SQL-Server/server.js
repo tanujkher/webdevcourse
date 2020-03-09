@@ -1,36 +1,17 @@
 const express = require('express')
 const srv = express()
 
-const db = require('./db')
+const path = require('path')
 
 srv.use(express.json())
 srv.use(express.urlencoded({extended : true}))
 
 srv.set('view engine', 'hbs')
 
-srv.get('/', (req, res) => {
-    db.getAllPersons()
-    .then((person) => {
-        res.render('persons', {persons: person})
-    })
-    .catch((err) => {
-        console.error(err)
-    })
-})
+srv.use('/pages', require('./routes/pages').route)
+srv.use('/api', require('./routes/api').route)
 
-srv.get('/add', (req, res) => {
-    res.render('persons_add')
-})
-
-srv.post('/add', (req, res) => {
-    db.addNewPerson(req.body.name, req.body.age, req.body.city)
-    .then((result_prompt) => {
-        res.redirect('/')
-    })
-    .catch((err) => {
-        console.error(err)
-    })
-})
+srv.use('/', express.static(path.join(__dirname, 'public_static')))
 
 srv.listen(2102, () => {
     console.log('Server started at http://localhost:2102/')
