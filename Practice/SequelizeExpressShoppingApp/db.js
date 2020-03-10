@@ -1,0 +1,46 @@
+const Sequelize = require('sequelize')
+
+const db = new Sequelize('shopdb', 'shopper', 'shoppass', {
+    host: 'localhost',
+    dialect: 'mysql'
+})
+
+const User = db.define('users', {
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
+})
+
+const Product = db.define('products', {
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    manufacture: Sequelize.STRING,
+    price: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+        defaultValue: 0.0
+    }
+})
+
+db.sync().then(() => {
+    console.log('Database has been synced')
+}).catch((err) => {
+    console.error('Error creating database')
+})
+
+exports = module.exports = {
+    User, Product
+}
