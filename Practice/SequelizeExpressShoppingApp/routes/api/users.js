@@ -10,17 +10,13 @@ route.get('/', (req, res) => {
     })
     .catch((err) => {
         res.status(500).send({
-            error: 'Couldn\'t retrive users'
+            error: 'Couldn\'t retrieve users'
         })
     })
 })
 
 route.post('/', (req, res) => {
     // if request has name then add user
-    if(!req.body.name){
-        res.status(500).send({
-        })
-    }
     User.create({
         name: req.body.name
     }).then((user) => {

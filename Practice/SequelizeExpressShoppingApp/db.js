@@ -27,7 +27,7 @@ const Product = db.define('products', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    manufacture: Sequelize.STRING,
+    manufacturer: Sequelize.STRING,
     price: {
         type: Sequelize.FLOAT,
         allowNull: false,
