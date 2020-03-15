@@ -26,5 +26,34 @@ const Users = db.define('user', {
     },
     bio: {
         type: sequelize.TEXT
+    },
+    image: {
+        type: sequelize.STRING
     }
 })
+
+const Articles = db.define('article', {
+    slug: {
+        type: sequelize.STRING(100),
+        primaryKey: true
+    },
+    title: {
+        type: sequelize.STRING,
+        allowNull: false
+    },
+    description: {
+        type: sequelize.STRING
+    },
+    body: {
+        type: sequelize.TEXT
+    }
+})
+
+Articles.belongsTo(Users, {as: 'author'})
+Users.hasMany(Articles, {as: 'author'})
+
+exports = module.exports = {
+    db,
+    Users,
+    Articles
+}
