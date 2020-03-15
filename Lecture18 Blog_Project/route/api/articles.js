@@ -1,4 +1,4 @@
-const route = require('express').Router
+const route = require('express').Router()
 const { userFromToken } = require('../../middlewares/auth') 
 const { getAllArticles, createArticles } = require('../../controllers/articles')
 const { findUserByToken } = require('../../controllers/users')

@@ -13,4 +13,4 @@ route.post('/', async (req, res) => {
     res.send(user)
 })
 
-module.exports = route
+exports = module.exports = route

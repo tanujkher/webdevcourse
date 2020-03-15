@@ -16,4 +16,6 @@ async function userFromToken(req, res, next){
     })
 }
 
-module.exports = userFromToken
+exports = module.exports = {
+    userFromToken
+}

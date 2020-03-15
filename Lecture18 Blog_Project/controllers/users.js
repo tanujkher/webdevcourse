@@ -1,4 +1,4 @@
-const { Users } = require('../data/db').Users
+const { Users } = require('../data/db')
 const getRandomString = require('../utils/random').getRandomString
 
 async function createUser(username, email, bio, password, image){
@@ -36,7 +36,7 @@ async function findUserByToken(token){
     return user
 }
 
-module.exports = {
+exports = module.exports = {
     createUser,
     authUser,
     findUserByToken
