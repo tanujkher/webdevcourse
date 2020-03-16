@@ -4,6 +4,16 @@ function fetchProducts(done){
     })
 }
 
+function addProduct(name, manufacturer, price, done){
+    $.post('/api/products', {
+        name: name,
+        manufacturer: manufacturer,
+        price: price
+    }, (data) => {
+        done(data)
+    })
+} 
+
 function createProductCard(product){
     return $(`
     <div class="col-4 card mx-2 p-4">

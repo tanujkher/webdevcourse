@@ -1,3 +1,4 @@
+// Todo resolve the alet issue in add_products.js and add a cart to store data of items added to cart by user
 const express = require('express')
 const srv = express();
 
