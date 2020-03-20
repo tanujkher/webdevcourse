@@ -1,7 +1,11 @@
 const route = require('express').Router()
 
 route.get('/', (req, res) => {
-    res.send('Visible to none')
+    if(req.user){
+        return res.send('Visible to none')
+    }else{
+        return res.redirect('/login')
+    }
 })
 
 exports = module.exports = route
