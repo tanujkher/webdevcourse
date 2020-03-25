@@ -12,4 +12,13 @@ $(() => {
             fare.append($('<div>').text(data.fare))
         })
     })
+
+    let getrates = $('#getrates')
+    let rate = $('#rate')
+
+    getrates.click(() => {
+        $.get('/rate', (data) => {
+            rate.text(JSON.stringify(data))
+        })
+    })
 })
