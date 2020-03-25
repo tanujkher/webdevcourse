@@ -20,6 +20,4 @@ srv.get('/rate', (req, res) => {
     res.send(fareutils.rate)
 })
 
-srv.listen(7685, () => {
-    console.log('Server started at http://localhost:7685')
-})
+exports = module.exports = srv

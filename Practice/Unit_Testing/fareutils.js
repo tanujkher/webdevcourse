@@ -3,7 +3,7 @@ let rate = {
     minKm: 5,
     perKm: 10,
     freeMin: 15,
-    perMin: 2,
+    perMin: 2
 }
 
 function calcfare(km, min){
