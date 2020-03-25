@@ -18,7 +18,14 @@ $(() => {
 
     getrates.click(() => {
         $.get('/rate', (data) => {
-            rate.text(JSON.stringify(data))
+            let prettyRateData = `
+            Fixed Fare: Rs. ${data.fixed} <br>
+            Min Km: ${data.minKm} km <br>
+            Per Km: Rs. ${data.perKm} <br>
+            Free Minutes: ${data.freeMin} min <br>
+            Per Minute Fare: Rs. ${data.perMin} 
+            `
+            rate.html(prettyRateData)
         })
     })
 })
