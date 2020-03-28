@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="jquery-3.4.1.js"></script>
     <script src="script.js"></script>
 </head>
@@ -13,6 +14,12 @@
         <button onclick="play(2)">SOUND 2</button>
         <button onclick="play(3)">SOUND 3</button>
         <button onclick="play(4)">SOUND 4</button>
+    </div>
+    <div id="audio" style="display: none;">
+        <audio id="1" src="1.mp3"></audio>
+        <audio id="2" src="2.mp3"></audio>
+        <audio id="3" src="3.mp3"></audio>
+        <audio id="4" src="4.mp3"></audio>
     </div>
 </body>
 </html>
